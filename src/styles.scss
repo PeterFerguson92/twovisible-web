@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('../src/css/font-awesome.min.css');
+
 .main {
     background: #fff none repeat scroll 0 0;
     color: #666666;
@@ -291,7 +293,7 @@ p:last-child {
     background-position: center center;
     background-size: cover;
 }
- 
+
 .bg-image-4 {
     background-image: url(../src/assets/img//slider/s4.jpg);
     background-repeat: no-repeat;
