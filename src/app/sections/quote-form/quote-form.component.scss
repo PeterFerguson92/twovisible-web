@@ -1,0 +1,11 @@
+@media only screen and (max-width: 600px) {
+    .contact_section {
+        background-image: url();
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+    .contact_section {
+        background-size: 915px;
+    }
+}
