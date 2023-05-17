@@ -7,12 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { SectionsModule } from './sections/sections.module';
 import { QuoteComponent } from './quote/quote.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     QuoteComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
