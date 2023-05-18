@@ -5,6 +5,7 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ServicesDetailComponent } from './services-detail/services-detail.component';
 import { ServicesSlideShowComponent } from './services-slide-show/services-slide-show.component';
+import { AboutUsDetailComponent } from './about-us-detail/about-us-detail.component';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,7 @@ import { ServicesSlideShowComponent } from './services-slide-show/services-slide
         ProductDetailComponent,
         ServicesDetailComponent,
         ServicesSlideShowComponent,
+        AboutUsDetailComponent,
     ],
     imports: [CommonModule],
     exports: [
@@ -21,6 +23,7 @@ import { ServicesSlideShowComponent } from './services-slide-show/services-slide
         ProductDetailComponent,
         ServicesDetailComponent,
         ServicesSlideShowComponent,
+        AboutUsDetailComponent,
     ],
 })
 export class SectionsModule {}

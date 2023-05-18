@@ -9,22 +9,19 @@ import { SectionsModule } from './sections/sections.module';
 import { QuoteComponent } from './quote/quote.component';
 import { ProductsComponent } from './products/products.component';
 import { ServicesComponent } from './services/services.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    QuoteComponent,
-    ProductsComponent,
-    ServicesComponent,
-  ],
-  imports: [
-    BrowserModule,
-    SharedModule,
-    SectionsModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        QuoteComponent,
+        ProductsComponent,
+        ServicesComponent,
+        AboutUsComponent,
+    ],
+    imports: [BrowserModule, SharedModule, SectionsModule, AppRoutingModule],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
