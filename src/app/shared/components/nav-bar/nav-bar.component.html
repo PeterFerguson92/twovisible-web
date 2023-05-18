@@ -1,7 +1,7 @@
 <header class="header_section">
     <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
-            <a class="navbar-brand" href="index.html"> <img src="../../../../assets/images/logo.png" alt="" /><span> Tropiko </span> </a>
+            <a (click)="onRedirect('/home')" class="navbar-brand"> <img src="../../../../assets/img/logo100.png" alt="" /><span> 2VISIBLE </span> </a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -30,12 +30,9 @@
                             <a class="nav-link pointer" (click)="onRedirect('/services')"> Services </a>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                        <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                    </form>
                 </div>
                 <div class="quote_btn-container ml-0 ml-lg-4 d-flex justify-content-center">
-                    <a style="color: aliceblue; cursor: pointer" (click)="('/quote')"> Get A quote </a>
+                    <a style="color: aliceblue; cursor: pointer" (click)="onRedirect('/quote')"> Get A quote </a>
                 </div>
             </div>
         </nav>
