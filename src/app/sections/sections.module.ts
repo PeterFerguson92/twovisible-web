@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitleSlideComponent } from './title-slide/title-slide.component';
-import { ServicesComponent } from './services/services.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ServicesDetailComponent } from './services-detail/services-detail.component';
 
 @NgModule({
-    declarations: [TitleSlideComponent, ServicesComponent, QuoteFormComponent, ProductDetailComponent],
+    declarations: [TitleSlideComponent, QuoteFormComponent, ProductDetailComponent, ServicesDetailComponent],
     imports: [CommonModule],
-    exports: [TitleSlideComponent, ServicesComponent, QuoteFormComponent, ProductDetailComponent],
+    exports: [TitleSlideComponent, QuoteFormComponent, ProductDetailComponent, ServicesDetailComponent],
 })
 export class SectionsModule {}
