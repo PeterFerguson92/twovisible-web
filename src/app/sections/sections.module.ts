@@ -4,8 +4,9 @@ import { TitleSlideComponent } from './title-slide/title-slide.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ServicesDetailComponent } from './services-detail/services-detail.component';
-import { ServicesSlideShowComponent } from './services-slide-show/services-slide-show.component';
 import { AboutUsDetailComponent } from './about-us-detail/about-us-detail.component';
+import { HomeSliderComponent } from './home-slider/home-slider.component';
+import { VideoServiceComponent } from './video-service/video-service.component';
 
 @NgModule({
     declarations: [
@@ -13,8 +14,9 @@ import { AboutUsDetailComponent } from './about-us-detail/about-us-detail.compon
         QuoteFormComponent,
         ProductDetailComponent,
         ServicesDetailComponent,
-        ServicesSlideShowComponent,
         AboutUsDetailComponent,
+        HomeSliderComponent,
+        VideoServiceComponent,
     ],
     imports: [CommonModule],
     exports: [
@@ -22,8 +24,9 @@ import { AboutUsDetailComponent } from './about-us-detail/about-us-detail.compon
         QuoteFormComponent,
         ProductDetailComponent,
         ServicesDetailComponent,
-        ServicesSlideShowComponent,
         AboutUsDetailComponent,
+        HomeSliderComponent,
+        VideoServiceComponent,
     ],
 })
 export class SectionsModule {}
