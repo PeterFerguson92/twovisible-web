@@ -6,7 +6,6 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ServicesDetailComponent } from './services-detail/services-detail.component';
 import { ServicesSlideShowComponent } from './services-slide-show/services-slide-show.component';
 import { AboutUsDetailComponent } from './about-us-detail/about-us-detail.component';
-import { HomeSliderComponent } from './home-slider/home-slider.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +15,6 @@ import { HomeSliderComponent } from './home-slider/home-slider.component';
         ServicesDetailComponent,
         ServicesSlideShowComponent,
         AboutUsDetailComponent,
-        HomeSliderComponent,
     ],
     imports: [CommonModule],
     exports: [
