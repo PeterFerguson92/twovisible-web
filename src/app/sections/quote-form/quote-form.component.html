@@ -4,33 +4,33 @@
             <h2 class="font-weight-bold">Let's Talk</h2>
             <div class="row">
                 <div class="col-md-8 mr-auto">
-                    <form action="">
+                    <form [formGroup]="requestForm">
                         <div class="contact_form-container">
                             <div>
                                 <div>
-                                    <input type="text" placeholder="Name" />
+                                    <input type="text" placeholder="Name" formControlName="name" />
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Surname" />
+                                    <input type="text" placeholder="Surname" formControlName="surname" />
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Phone Number" />
+                                    <input type="tel" placeholder="Phone Number" formControlName="phone" />
                                 </div>
                                 <div>
-                                    <input type="email" placeholder="Email" />
+                                    <input type="email" placeholder="Email" formControlName="email" />
                                 </div>
                                 <br />
                                 <label for="types">Select type: </label><br />
-                                <select id="types" style="width: 250px">
-                                    <option value="volvo">House</option>
-                                    <option value="saab">Flat</option>
-                                    <option value="opel">Garage</option>
+                                <select id="types" style="width: 250px" formControlName="type">
+                                    <option *ngFor="let items of spaces">
+                                        {{ items }}
+                                    </option>
                                 </select>
                                 <div class="mt-5">
-                                    <input type="text" placeholder="Message" />
+                                    <input type="text" placeholder="Message" formControlName="message" />
                                 </div>
                                 <div class="mt-5">
-                                    <button class="button custom_dark-btn">Send</button>
+                                    <button class="button custom_dark-btn" [disabled]="isSubmitDisabled()" (click)="onSubmit()">Send</button>
                                 </div>
                             </div>
                         </div>

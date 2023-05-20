@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 import { TitleSlideComponent } from './title-slide/title-slide.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
@@ -20,8 +22,10 @@ import { ProductSliderComponent } from './product-slider/product-slider.componen
         VideoServiceComponent,
         ProductSliderComponent,
     ],
-    imports: [CommonModule],
+    imports: [CommonModule, ReactiveFormsModule, FormsModule],
     exports: [
+        ReactiveFormsModule,
+        FormsModule,
         TitleSlideComponent,
         QuoteFormComponent,
         ProductDetailComponent,
