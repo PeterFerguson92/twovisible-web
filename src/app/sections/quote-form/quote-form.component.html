@@ -8,16 +8,16 @@
                         <div class="contact_form-container">
                             <div>
                                 <div>
-                                    <input type="text" placeholder="Name" formControlName="name" />
+                                    <input type="text" placeholder="Name" formControlName="name" [ngClass]="getValidationClass('name')" />
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Surname" formControlName="surname" />
+                                    <input type="text" placeholder="Surname" formControlName="surname" [ngClass]="getValidationClass('surname')" />
                                 </div>
                                 <div>
-                                    <input type="tel" placeholder="Phone Number" formControlName="phone" />
+                                    <input type="tel" placeholder="Phone Number" formControlName="phone" [ngClass]="getValidationClass('phone')" />
                                 </div>
                                 <div>
-                                    <input type="email" placeholder="Email" formControlName="email" />
+                                    <input type="email" placeholder="Email" formControlName="email" [ngClass]="getValidationClass('email')" />
                                 </div>
                                 <br />
                                 <label for="types">Select type: </label><br />
@@ -27,7 +27,7 @@
                                     </option>
                                 </select>
                                 <div class="mt-5">
-                                    <input type="text" placeholder="Message" formControlName="message" />
+                                    <input type="text" placeholder="Message" formControlName="message" [ngClass]="getValidationClass('message')" />
                                 </div>
                                 <div class="mt-5">
                                     <button class="button custom_dark-btn" [disabled]="isSubmitDisabled()" (click)="onSubmit()">Send</button>

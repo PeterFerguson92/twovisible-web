@@ -22,6 +22,24 @@ export class QuoteFormComponent implements OnInit {
         });
     }
 
+    getFormControl(fControlName: string) {
+        return this.requestForm.get(fControlName);
+    }
+
+    getValidationClass(fControlName) {
+        const fControl = this.getFormControl(fControlName);
+        if (fControl.dirty && fControl.valid) {
+            if ('email' === fControlName) {
+                return null;
+            }
+            return { validInput: true };
+        }
+
+        if (fControl.dirty && !fControl.valid) {
+            return { invalidInput: true };
+        }
+    }
+
     isSubmitDisabled() {
         return !this.requestForm.valid;
     }
