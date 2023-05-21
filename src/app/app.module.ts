@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { SectionsModule } from './sections/sections.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
@@ -20,7 +21,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
         ServicesComponent,
         AboutUsComponent,
     ],
-    imports: [BrowserModule, SharedModule, SectionsModule, AppRoutingModule],
+    imports: [BrowserModule, SharedModule, SectionsModule, AppRoutingModule, HttpClientModule],
     providers: [],
     bootstrap: [AppComponent],
 })

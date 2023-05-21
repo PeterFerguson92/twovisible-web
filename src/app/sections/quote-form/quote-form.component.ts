@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EmailService } from 'src/app/shared/service/email.service';
 
 @Component({
     selector: 'app-quote-form',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class QuoteFormComponent implements OnInit {
     requestForm: FormGroup;
     spaces = ['House', 'Garage', 'Garden'];
-    constructor(private formBuilder: FormBuilder) {}
+    constructor(private formBuilder: FormBuilder, private emailService: EmailService) {}
 
     ngOnInit() {
         this.requestForm = this.formBuilder.group({
@@ -52,6 +53,7 @@ export class QuoteFormComponent implements OnInit {
         });
         const message = this.buildMessage(requestDetails);
         console.log(message);
+        this.sendEmail(message);
     }
 
     buildMessage(requestDetails) {
@@ -68,5 +70,14 @@ Kind regards
 
 ${requestDetails.name}
     `;
+    }
+
+    sendEmail(message): void {
+        this.emailService.SendEmail(message).subscribe(
+            (data) => console.log(data),
+            (error) => {
+                console.log(error);
+            }
+        );
     }
 }
