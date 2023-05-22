@@ -7,11 +7,21 @@ import { catchError } from 'rxjs/operators';
     providedIn: 'root',
 })
 export class EmailService {
-    private url = 'https://mailthis.to/';
+    private url = 'https://api.emailjs.com/api/v1.0/email/send';
     constructor(private http: HttpClient) {}
 
     SendEmail(input: any) {
-        return this.http.post<any>(this.url, input).pipe(catchError(this.handleRequestError));
+        const data = this.getData(input);
+        return this.http.post<any>(this.url, data).pipe(catchError(this.handleRequestError));
+    }
+
+    getData(params) {
+        return {
+            service_id: 'service_by9zdq8',
+            template_id: 'template_vqsd9sl',
+            user_id: 'DtAgxA2AoWRpkn2RD',
+            template_params: params,
+        };
     }
 
     private handleRequestError(response: HttpErrorResponse) {

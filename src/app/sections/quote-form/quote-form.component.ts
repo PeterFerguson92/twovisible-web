@@ -53,7 +53,7 @@ export class QuoteFormComponent implements OnInit {
         });
         const message = this.buildMessage(requestDetails);
         console.log(message);
-        this.sendEmail(message);
+        this.sendEmail(requestDetails);
     }
 
     buildMessage(requestDetails) {
@@ -74,7 +74,7 @@ ${requestDetails.name}
 
     sendEmail(message): void {
         this.emailService.SendEmail(message).subscribe(
-            (data) => console.log(data),
+            (data) => {},
             (error) => {
                 console.log(error);
             }
