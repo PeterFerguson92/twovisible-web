@@ -35,6 +35,7 @@
                                     [text]="errorText"
                                     [color]="'#ff9800'"
                                 ></app-notification-message>
+                                <app-spinner *ngIf="showSpinner"></app-spinner>
                                 <div class="mt-5">
                                     <button class="button custom_dark-btn" [disabled]="isSubmitDisabled()" (click)="onSubmit()">Send</button>
                                 </div>

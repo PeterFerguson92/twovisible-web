@@ -12,6 +12,7 @@ export class QuoteFormComponent implements OnInit {
     errorText: string;
     showInfoText: boolean;
     showErrorText: boolean;
+    showSpinner = false;
     requestForm: FormGroup;
     spaces = ['House', 'Garage', 'Garden'];
     constructor(private formBuilder: FormBuilder, private emailService: EmailService) {}
@@ -59,9 +60,11 @@ export class QuoteFormComponent implements OnInit {
     }
 
     sendEmail(message): void {
+        this.showSpinner = true;
         this.emailService.SendEmail(message).subscribe(
             (data) => {
                 console.log(data);
+                this.showSpinner = false;
                 this.infoText = 'Request Sent Succesfully';
                 this.showInfoText = true;
                 this.clearNotification();
@@ -69,6 +72,7 @@ export class QuoteFormComponent implements OnInit {
             },
             (error) => {
                 console.log(error);
+                this.showSpinner = false;
                 this.showErrorText = true;
                 this.errorText = 'Something went wrong, Please contact support';
                 this.clearNotification();
