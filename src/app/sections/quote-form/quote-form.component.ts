@@ -8,6 +8,10 @@ import { EmailService } from 'src/app/shared/service/email.service';
     styleUrls: ['./quote-form.component.scss'],
 })
 export class QuoteFormComponent implements OnInit {
+    infoText: string;
+    errorText: string;
+    showInfoText: boolean;
+    showErrorText: boolean;
     requestForm: FormGroup;
     spaces = ['House', 'Garage', 'Garden'];
     constructor(private formBuilder: FormBuilder, private emailService: EmailService) {}
@@ -51,33 +55,44 @@ export class QuoteFormComponent implements OnInit {
             const formControl = this.requestForm.controls[key];
             requestDetails[key] = formControl.value;
         });
-        const message = this.buildMessage(requestDetails);
-        console.log(message);
         this.sendEmail(requestDetails);
-    }
-
-    buildMessage(requestDetails) {
-        return `
-Hello
-
-This is ${requestDetails.name} ${requestDetails.surname} and would like to request a quote for my ${requestDetails.type}.
-
-${requestDetails.message}.
-
-Please contact me on ${requestDetails.phone} or email me at ${requestDetails.email};
-
-Kind regards
-
-${requestDetails.name}
-    `;
     }
 
     sendEmail(message): void {
         this.emailService.SendEmail(message).subscribe(
-            (data) => {},
+            (data) => {
+                console.log(data);
+                this.infoText = 'Request Sent Succesfully';
+                this.showInfoText = true;
+                this.clearNotification();
+                this.clearFields();
+            },
             (error) => {
                 console.log(error);
+                this.showErrorText = true;
+                this.errorText = 'Something went wrong, Please contact support';
+                this.clearNotification();
+                this.clearFields();
             }
         );
+    }
+
+    clearNotification() {
+        setTimeout(
+            // tslint:disable-next-line:space-before-function-paren
+            function () {
+                this.showInfoText = false;
+                this.showErrorText = false;
+                this.errorText = null;
+                this.infoText = null;
+            }.bind(this),
+            3000
+        );
+    }
+
+    clearFields() {
+        Object.keys(this.requestForm.controls).forEach((key) => {
+            this.requestForm.controls[key].reset();
+        });
     }
 }

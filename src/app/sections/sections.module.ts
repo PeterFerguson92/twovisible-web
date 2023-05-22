@@ -10,6 +10,7 @@ import { AboutUsDetailComponent } from './about-us-detail/about-us-detail.compon
 import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { VideoServiceComponent } from './video-service/video-service.component';
 import { ProductSliderComponent } from './product-slider/product-slider.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,7 @@ import { ProductSliderComponent } from './product-slider/product-slider.componen
         VideoServiceComponent,
         ProductSliderComponent,
     ],
-    imports: [CommonModule, ReactiveFormsModule, FormsModule],
+    imports: [CommonModule, ReactiveFormsModule, FormsModule, SharedModule],
     exports: [
         ReactiveFormsModule,
         FormsModule,
