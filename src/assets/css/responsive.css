@@ -53,7 +53,8 @@
     }
 
     .contact_section input {
-        background-color: transparent;
+        background-image: url();
+        /* background-color: transparent; */
     }
 
     .info_section .col-md-3 {
