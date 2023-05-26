@@ -11,6 +11,7 @@ import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { VideoServiceComponent } from './video-service/video-service.component';
 import { ProductSliderComponent } from './product-slider/product-slider.component';
 import { SharedModule } from '../shared/shared.module';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { SharedModule } from '../shared/shared.module';
         HomeSliderComponent,
         VideoServiceComponent,
         ProductSliderComponent,
+        ComingSoonComponent,
     ],
     imports: [CommonModule, ReactiveFormsModule, FormsModule, SharedModule],
     exports: [
