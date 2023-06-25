@@ -12,6 +12,7 @@ import { VideoServiceComponent } from './video-service/video-service.component';
 import { ProductSliderComponent } from './product-slider/product-slider.component';
 import { SharedModule } from '../shared/shared.module';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { StoreDetailsComponent } from './store-details/store-details.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
         VideoServiceComponent,
         ProductSliderComponent,
         ComingSoonComponent,
+        StoreDetailsComponent,
     ],
     imports: [CommonModule, ReactiveFormsModule, FormsModule, SharedModule],
     exports: [
@@ -37,6 +39,7 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
         HomeSliderComponent,
         VideoServiceComponent,
         ProductSliderComponent,
+        StoreDetailsComponent,
     ],
 })
 export class SectionsModule {}

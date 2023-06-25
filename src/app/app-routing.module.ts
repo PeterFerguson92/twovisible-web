@@ -6,6 +6,7 @@ import { ProductsComponent } from './products/products.component';
 import { ServicesComponent } from './services/services.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ComingSoonComponent } from './sections/coming-soon/coming-soon.component';
+import { StoreComponent } from './store/store.component';
 
 const routes: Routes = [
     // { path: '**', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: 'products', component: ProductsComponent },
     { path: 'services', component: ServicesComponent },
     { path: 'aboutUs', component: AboutUsComponent },
+    { path: 'store', component: StoreComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

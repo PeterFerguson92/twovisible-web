@@ -1,0 +1,87 @@
+<div class="hero_area sub_pages">
+    <section class="contact_section layout_padding">
+        <div class="container">
+            <h2 class="font-weight-bold">Try our lights</h2>
+            <div class="row">
+                <div class="col-md-8 mr-auto">
+                    <form [formGroup]="checkoutForm">
+                        <div class="contact_form-container">
+                            <div>
+                                <label for="types">Select desidered package: </label><br />
+                                <select id="package" style="width: 250px" formControlName="package">
+                                    <option *ngFor="let items of packages">
+                                        {{ items }}
+                                    </option>
+                                </select>
+                                <br />
+                                <br />
+                                <div>
+                                    <input type="text" placeholder="Name" formControlName="name" [ngClass]="getValidationClass('name')" />
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="Surname" formControlName="surname" [ngClass]="getValidationClass('surname')" />
+                                </div>
+                                <div>
+                                    <input type="tel" placeholder="Phone Number" formControlName="phone" [ngClass]="getValidationClass('phone')" />
+                                </div>
+                                <div>
+                                    <input type="email" placeholder="Email" formControlName="email" [ngClass]="getValidationClass('email')" />
+                                </div>
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Address Line 1"
+                                        formControlName="addressLine1"
+                                        [ngClass]="getValidationClass('addressLine1')"
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        type="text"
+                                        placeholder="Address Line 2"
+                                        formControlName="addressLine2"
+                                        [ngClass]="getValidationClass('addressLine2')"
+                                    />
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="Postcode" formControlName="postcode" [ngClass]="getValidationClass('postcode')" />
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="City" formControlName="city" [ngClass]="getValidationClass('city')" />
+                                </div>
+
+                                <div class="mt-5">
+                                    <textarea
+                                        id="w3review"
+                                        placeholder="Any request or additional comments"
+                                        formControlName="additionalComments"
+                                        name="w3review"
+                                        rows="4"
+                                        cols="40"
+                                    ></textarea>
+                                    <!-- <br />
+                                    <input
+                                        type="textarea"
+                                        placeholder="Any request or additional comments"
+                                        formControlName="additionalComments"
+                                        [ngClass]="getValidationClass('additionalComments')"
+                                    /> -->
+                                </div>
+                                <app-notification-message [showText]="showInfoText" [text]="infoText" [color]="'#00B61C'"></app-notification-message>
+                                <app-notification-message
+                                    [showText]="showErrorText"
+                                    [text]="errorText"
+                                    [color]="'#ff9800'"
+                                ></app-notification-message>
+                                <app-spinner *ngIf="showSpinner"></app-spinner>
+                                <div class="mt-5">
+                                    <button class="button custom_dark-btn" [disabled]="isSubmitDisabled()" (click)="onSubmit()">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

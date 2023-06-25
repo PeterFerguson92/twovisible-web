@@ -11,9 +11,11 @@ export class TitleSlideComponent implements OnInit {
 
     ngOnInit() {}
 
-    onSeeProduct() {
-        this.router.navigate(['products']);
+    onVisitStore() {
+        this.router.navigate(['store']);
     }
 
-    onContactUs() {}
+    onContactUs() {
+        this.router.navigate(['aboutUs']);
+    }
 }

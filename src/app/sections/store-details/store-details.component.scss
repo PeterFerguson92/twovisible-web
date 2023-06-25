@@ -1,0 +1,32 @@
+@media only screen and (max-width: 600px) {
+    .contact_section {
+        background-image: url();
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+    .contact_section {
+        background-size: 915px;
+    }
+}
+
+button:disabled,
+button[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: no-drop;
+}
+
+.validInput {
+    /* border-color: green; */
+    background: url('https://assets.digitalocean.com/labs/icons/hand-thumbs-up.svg') no-repeat 95% 50% white;
+    background-size: 25px;
+}
+
+.invalidInput {
+    border-color: red;
+    background: url('https://assets.digitalocean.com/labs/icons/exclamation-triangle-fill.svg') no-repeat 95% 50%
+        white;
+    background-size: 25px;
+}

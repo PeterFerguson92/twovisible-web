@@ -11,6 +11,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { ProductsComponent } from './products/products.component';
 import { ServicesComponent } from './services/services.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { StoreComponent } from './store/store.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
         ProductsComponent,
         ServicesComponent,
         AboutUsComponent,
+        StoreComponent,
     ],
     imports: [BrowserModule, SharedModule, SectionsModule, AppRoutingModule, HttpClientModule],
     providers: [],
