@@ -11,7 +11,9 @@
                     <div class="card-body">
                         <h5 class="card-title">Package 1</h5>
                         <p class="card-text">2 Solar floodlights installation</p>
-                        <p class="card-text"><b>Price: </b><s>499</s> £249 (50% Discount for this month)</p>
+                        <p class="card-text">
+                            <b>Price: </b>£<s>{{ package1BeforeDiscount }}</s> £{{ package1AfterDiscount }}
+                        </p>
                     </div>
                 </div>
                 <div class="card">
@@ -19,7 +21,9 @@
                     <div class="card-body">
                         <h5 class="card-title">Package 2</h5>
                         <p class="card-text">2 - 3 Solar floodlights installation</p>
-                        <p class="card-text"><b>Price: </b><s>599</s> £299 (50% Discount for this month)</p>
+                        <p class="card-text">
+                            <b>Price: </b> <s>£{{ package2BeforeDiscount }}</s> £{{ package2AfterDiscount }}
+                        </p>
                     </div>
                 </div>
                 <!-- <div class="card">
