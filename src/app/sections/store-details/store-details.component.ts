@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
 import { EmailService } from 'src/app/shared/service/email.service';
 import { ValidationService } from 'src/app/shared/service/validation.service';
 
@@ -8,7 +9,7 @@ import { ValidationService } from 'src/app/shared/service/validation.service';
     templateUrl: './store-details.component.html',
     styleUrls: ['./store-details.component.scss'],
 })
-export class StoreDetailsComponent implements OnInit {
+export class StoreDetailsComponent implements OnInit, OnDestroy {
     infoText: string;
     errorText: string;
     showInfoText: boolean;
@@ -16,6 +17,8 @@ export class StoreDetailsComponent implements OnInit {
     showSpinner = false;
     checkoutForm: FormGroup;
     packages = ['Package 1 - Single Light', 'Package 2 - Multiple Lights'];
+    paymentHandler: any = null;
+    componentDestroyed$: Subject<boolean> = new Subject();
 
     constructor(
         private formBuilder: FormBuilder,
@@ -62,12 +65,7 @@ export class StoreDetailsComponent implements OnInit {
     }
 
     onSubmit() {
-        const requestDetails = {};
-        Object.keys(this.checkoutForm.controls).forEach((key) => {
-            const formControl = this.checkoutForm.controls[key];
-            requestDetails[key] = formControl.value;
-        });
-        this.sendEmail(requestDetails);
+        window.open('https://buy.stripe.com/14k8y42r9g0U8N2aEE', '_blank');
     }
 
     sendEmail(message): void {
@@ -108,5 +106,10 @@ export class StoreDetailsComponent implements OnInit {
         Object.keys(this.checkoutForm.controls).forEach((key) => {
             this.checkoutForm.controls[key].reset();
         });
+    }
+
+    ngOnDestroy() {
+        this.componentDestroyed$.next(true);
+        this.componentDestroyed$.complete();
     }
 }

@@ -385,7 +385,7 @@ a:focus {
 /* contact section */
 
 .contact_section {
-    background-image: url(../img/whiteBack.png);
+    /* background-image: url(../img/whiteBack.png); */
     background-repeat: no-repeat;
     background-size: 615px;
     background-position: right center;
