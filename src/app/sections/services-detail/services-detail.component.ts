@@ -5,6 +5,8 @@ import {
     PACKAGE_1_PRICE_BEFORE_DISCOUNT,
     PACKAGE_2_PRICE_AFTER_DISCOUNT,
     PACKAGE_2_PRICE_BEFORE_DISCOUNT,
+    PACKAGE_3_PRICE_AFTER_DISCOUNT,
+    PACKAGE_3_PRICE_BEFORE_DISCOUNT,
 } from 'src/constant';
 
 @Component({
@@ -17,7 +19,8 @@ export class ServicesDetailComponent implements OnInit {
     package1AfterDiscount = PACKAGE_1_PRICE_AFTER_DISCOUNT;
     package2BeforeDiscount = PACKAGE_2_PRICE_BEFORE_DISCOUNT;
     package2AfterDiscount = PACKAGE_2_PRICE_AFTER_DISCOUNT;
-
+    package3BeforeDiscount = PACKAGE_3_PRICE_BEFORE_DISCOUNT;
+    package3AfterDiscount = PACKAGE_3_PRICE_AFTER_DISCOUNT;
     constructor(private router: Router) {}
 
     ngOnInit() {}
