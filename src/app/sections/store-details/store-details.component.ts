@@ -16,6 +16,7 @@ export class StoreDetailsComponent implements OnInit, OnDestroy {
     showErrorText: boolean;
     showSpinner = false;
     checkoutForm: FormGroup;
+    selectedPackage;
     packages = ['Package 1 - Single Light', 'Package 2 - Multiple Lights'];
     paymentHandler: any = null;
     componentDestroyed$: Subject<boolean> = new Subject();
@@ -61,32 +62,21 @@ export class StoreDetailsComponent implements OnInit, OnDestroy {
     }
 
     isSubmitDisabled() {
-        return !this.checkoutForm.valid;
+        return false;
+        // return !this.checkoutForm.valid;
     }
 
-    onSubmit() {
-        window.open('https://buy.stripe.com/14k8y42r9g0U8N2aEE', '_blank');
+    onSubmit() {}
+
+    selectPackage(value) {
+        if (value === '1') {
+            window.open('https://buy.stripe.com/test_bIY01Of298Nf7o4fYY', '_blank');
+        } else {
+            window.open('https://buy.stripe.com/fZe5lSfdV4ic7IY5km', '_blank');
+        }
     }
 
     sendEmail(message): void {
-        this.showSpinner = true;
-        this.emailService.SendEmail(message).subscribe(
-            () => {
-                this.showSpinner = false;
-                this.infoText = 'Request Sent Succesfully';
-                this.showInfoText = true;
-                this.clearNotification();
-                this.clearFields();
-            },
-            (error) => {
-                console.log(error);
-                this.showSpinner = false;
-                this.showErrorText = true;
-                this.errorText = 'Something went wrong, Please contact support';
-                this.clearNotification();
-                this.clearFields();
-            }
-        );
     }
 
     clearNotification() {

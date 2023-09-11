@@ -13,6 +13,7 @@ import { ProductSliderComponent } from './product-slider/product-slider.componen
 import { SharedModule } from '../shared/shared.module';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { StoreDetailsComponent } from './store-details/store-details.component';
+import { PackagesComponent } from './store-details/packages/packages.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { StoreDetailsComponent } from './store-details/store-details.component';
         ProductSliderComponent,
         ComingSoonComponent,
         StoreDetailsComponent,
+        PackagesComponent,
     ],
     imports: [CommonModule, ReactiveFormsModule, FormsModule, SharedModule],
     exports: [
@@ -40,6 +42,7 @@ import { StoreDetailsComponent } from './store-details/store-details.component';
         VideoServiceComponent,
         ProductSliderComponent,
         StoreDetailsComponent,
+        PackagesComponent,
     ],
 })
 export class SectionsModule {}
