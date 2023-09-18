@@ -6,7 +6,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
     styleUrls: ['./packages.component.scss'],
 })
 export class PackagesComponent implements OnInit {
-    coverImagePath = '../../../../assets/images/2visible/lights.JPG';
+    coverPackage1Path = '../../../../assets/img/package1.jpeg';
+    coverPackage2Path = '../../../../assets/img/package2.jpeg';
 
     @Output()
     selectedPackage = new EventEmitter<string>();

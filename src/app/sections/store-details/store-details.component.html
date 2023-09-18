@@ -7,9 +7,8 @@
                     <form [formGroup]="checkoutForm">
                         <div class="contact_form-container">
                             <div>
-                                <label for="types">Select desidered package: </label><br />
+                                <label for="types">Select desired package: </label><br />
                                 <app-packages (selectedPackage)="selectPackage($event)"></app-packages>
-
                             </div>
                         </div>
                     </form>
