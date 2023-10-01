@@ -12,7 +12,7 @@ export class TitleSlideComponent implements OnInit {
     ngOnInit() {}
 
     onVisitStore() {
-        this.router.navigate(['store']);
+      window.open('https://buy.stripe.com/test_00gaGsdY5aVndMs9AB', '_blank');
     }
 
     onContactUs() {
